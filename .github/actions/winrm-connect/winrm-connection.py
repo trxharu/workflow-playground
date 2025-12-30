@@ -9,7 +9,7 @@ password = os.environ["WIN_PW"]
 
 session = winrm.Session(f"http://${server_name}:5985/wsman", auth=(username, password))
 
-result = session.run("hostname")
+result = session.run_ps("hostname")
 
 print("STDOUT:", result.std_out.decode("utf-8"))
 print("STDERR:", result.std_err.decode("utf-8"))
