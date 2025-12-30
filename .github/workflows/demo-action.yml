@@ -16,6 +16,6 @@ jobs:
       - run: echo "Deploying on ${{ inputs.environment }}"
       - run: ping ${{ vars.SQL_SERVER }} -4 -c 4
       - name: Run simple powershell command
-        uses: ./.github/workflows/winrm-connect.yml
+        uses: trxharu/workflow-playground/.github/workflows/winrm-connect.yml@main
         with:
           server_name: ${{ vars.SQL_SERVER }}
