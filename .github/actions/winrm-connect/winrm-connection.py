@@ -3,11 +3,12 @@ import sys
 
 import winrm
 
-server_name = sys.argv[1]
-pwsh_command = sys.argv[2]
+pwsh_command = sys.argv[1]
 
+server_name = os.environ["WIN_SERVER"]
 username = os.environ["WIN_UN"]
 password = os.environ["WIN_PW"]
+
 print(f"http://{server_name}:5985/wsman")
 
 session = winrm.Session(

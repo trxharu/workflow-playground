@@ -18,9 +18,9 @@ jobs:
       - uses: actions/checkout@v5
       - uses: ./.github/actions/winrm-connect
         env:
+          WIN_SERVER: ${{ vars.SQL_SERVER }}
           WIN_UN: ${{ secrets.WINRM_USER }}
           WIN_PW: ${{ secrets.WINRM_PASS }}
         with:
-          server_name: ${{ vars.SQL_SERVER }}
           pwsh: |
             Get-Service -Name WinRm
