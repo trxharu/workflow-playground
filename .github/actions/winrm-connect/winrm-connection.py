@@ -6,10 +6,10 @@ import winrm
 server_name = sys.argv[1]
 username = os.environ["WIN_UN"]
 password = os.environ["WIN_PW"]
-print(f"http://${server_name}:5985/wsman")
+print(f"http://{server_name}:5985/wsman")
 
 session = winrm.Session(
-    f"http://${server_name}:5985/wsman", auth=(username, password), transport="ntlm"
+    f"http://{server_name}:5985/wsman", auth=(username, password), transport="ntlm"
 )
 
 result = session.run_ps("hostname")
