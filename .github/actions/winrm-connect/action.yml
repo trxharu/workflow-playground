@@ -8,5 +8,5 @@ runs:
   using: composite
   steps:
     - name: Run WinRM Connect
-      run: python winrm-connection.py ${{ inputs.server_name }}
+      run: python ./.github/actions/winrm-connect/winrm-connection.py ${{ inputs.server_name }}
       shell: bash
