@@ -15,7 +15,7 @@ jobs:
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "Deploying on ${{ inputs.environment }}"
       - run: ping ${{ vars.SQL_SERVER }} -4 -c 4
-  Run-PSCmd:
-    uses: trxharu/workflow-playground/.github/workflows/winrm-connect.yml@main
-    with:
-      server_name: ${{ vars.SQL_SERVER }}
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/winrm-connect
+        with:
+          server_name: ${{ vars.SQL_SERVER }}

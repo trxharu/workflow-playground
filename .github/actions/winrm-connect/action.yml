@@ -1,0 +1,15 @@
+name: "PyWinRM"
+description: "Connect to WinRM using PyWinRM"
+inputs:
+  server_name:
+    description: Server Name to Connect
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Run WinRM Connect
+      run: python winrm-connection.py ${{ inputs.server_name }}
+      shell: bash
+      env:
+        WIN_UN: ${{ secrets.WINRM_USER }}
+        WIN_PW: ${{ secrets.WINRM_PASS }}
