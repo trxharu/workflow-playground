@@ -1,6 +1,15 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment Name"
+        required: true
+        type: choice
+        options:
+          - SIT01
+          - SIT02
 jobs:
   Demo-Action:
     runs-on: self-hosted
