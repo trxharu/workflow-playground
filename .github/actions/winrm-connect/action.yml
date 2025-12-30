@@ -4,9 +4,12 @@ inputs:
   server_name:
     description: Server Name to Connect
     required: true
+  pwsh:
+    description: Powershell Command
+    required: true
 runs:
   using: composite
   steps:
     - name: Run WinRM Connect
-      run: python ./.github/actions/winrm-connect/winrm-connection.py ${{ inputs.server_name }}
+      run: python ./.github/actions/winrm-connect/winrm-connection.py ${{ inputs.server_name }} ${{ inputs.pwsh }}
       shell: bash

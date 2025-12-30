@@ -22,3 +22,5 @@ jobs:
           WIN_PW: ${{ secrets.WINRM_PASS }}
         with:
           server_name: ${{ vars.SQL_SERVER }}
+          pwsh: |
+            Get-Service -Name WinRm
