@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is testing out GitHub Actions
 on: [workflow_dispatch]
 jobs:
   Demo-Action:
-    runs-on: self-host
+    runs-on: self-hosted
     steps:
       - run: echo "The job was triggered by a ${{ github.event_name }} event."
       - run: echo "This job is now running on a ${{ runner.os }} server."
