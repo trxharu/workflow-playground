@@ -17,5 +17,8 @@ jobs:
       - run: ping ${{ vars.SQL_SERVER }} -4 -c 4
       - uses: actions/checkout@v5
       - uses: ./.github/actions/winrm-connect
+        env:
+          WIN_UN: ${{ secrets.WINRM_USER }}
+          WIN_PW: ${{ secrets.WINRM_PASS }}
         with:
           server_name: ${{ vars.SQL_SERVER }}

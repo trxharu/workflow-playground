@@ -10,6 +10,3 @@ runs:
     - name: Run WinRM Connect
       run: python winrm-connection.py ${{ inputs.server_name }}
       shell: bash
-      env:
-        WIN_UN: ${{ secrets.WINRM_USER }}
-        WIN_PW: ${{ secrets.WINRM_PASS }}
